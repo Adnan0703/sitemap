@@ -55,7 +55,7 @@ Now we can generate sitemap of Posts model as shown in code below.
 set_time_limit(60*10); // if you have lots of records
 $models = ['Posts'];
 $dirPath = WWW_ROOT . DS . 'sitemaps';
-$sitemap = new \Sitemap\Lib\Sitemap();
+$sitemap = new \Adnan0703\Sitemap\Lib\Sitemap();
 $mainSitemap = $sitemap->createSitemap(
 	$dirPath, 
 	'http://cakephp.org/sitemaps/', 
