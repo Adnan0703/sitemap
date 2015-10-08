@@ -1,11 +1,12 @@
 <?php
-namespace Sitemap\Iterator;
+namespace Adnan0703\Sitemap\Iterator;
 
+use AppendIterator;
 use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
-use Sitemap\Iterator\PagesIterator;
-use Sitemap\Iterator\ModelSitemapEntriesIterator;
+use Adnan0703\Sitemap\Iterator\PagesIterator;
+use Adnan0703\Sitemap\Iterator\ModelSitemapEntriesIterator;
 
 
 /**
@@ -86,7 +87,7 @@ class ModelsSitemapEntriesIterator implements \Iterator
 	*/
 	protected function _setAppendIterator()
 	{
-		$this->_appendIterator = new \AppendIterator();
+		$this->_appendIterator = new AppendIterator();
 		$this->_appendIterator->append(new PagesIterator());
 		
 		foreach ($this->_models as $a_model) {

@@ -1,8 +1,8 @@
 <?php
-namespace Sitemap\Iterator;
+namespace Adnan0703\Sitemap\Iterator;
 
 use Cake\ORM\Query;
-use Sitemap\Iterator\ModelIterator;
+use Adnan0703\Sitemap\Iterator\ModelIterator;
 
 
 /**

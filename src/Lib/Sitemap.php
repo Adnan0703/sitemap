@@ -1,5 +1,5 @@
 <?php
-namespace Sitemap\Lib;
+namespace Adnan0703\Sitemap\Lib;
 
 use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;

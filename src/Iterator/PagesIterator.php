@@ -1,14 +1,18 @@
 <?php
-/**
-*
-* @author Adnan Aslam
-*/
-namespace Sitemap\Iterator;
+namespace Adnan0703\Sitemap\Iterator;
 
 use Cake\Core\Configure;
 
+
+
 /**
-* Iterator for non-model pages. It gets urls from the 'Sitemap.pages' configuration key.
+ * Iterator for non-model pages. It gets urls from the 'Sitemap.pages' configuration key.
+ *
+ * @author Adnan Aslam
+ * @license MIT
+ */
+
+/**
 * An example configuration would be:
 *
 * ```
