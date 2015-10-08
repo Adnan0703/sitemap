@@ -1,0 +1,33 @@
+{
+    "name": "adnan0703/sitemap",
+    "description": "Sitemap plugin for CakePHP",
+	"keywords": ["cakephp","sitemap"],
+    "type": "cakephp-plugin",
+	"homepage": "https://github.com/Adnan0703/sitemap",
+	"license": "MIT",
+    "authors": [
+        {
+            "name": "Adnan Aslam",
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "cakephp/cakephp": "3.0.x-dev",
+		"league/flysystem": "0.4.*",
+		"tackk/cartographer": "1.0.*",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitemap\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sitemap\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
