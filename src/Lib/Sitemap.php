@@ -6,7 +6,7 @@ use Cake\ORM\TableRegistry;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local as LocalAdapter;
 use Tackk\Cartographer\SitemapFactory;
-use Sitemap\Iterator\ModelsSitemapEntriesIterator;
+use Adnan0703\Sitemap\Iterator\ModelsSitemapEntriesIterator;
 
 
 /**
