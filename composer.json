@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sitemap\\": "src"
+            "Adnan0703\\Sitemap\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sitemap\\Test\\": "tests",
+            "Adnan0703\\Sitemap\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
