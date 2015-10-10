@@ -1,10 +1,10 @@
 {
     "name": "adnan0703/sitemap",
-    "description": "Sitemap plugin for CakePHP",
-    "keywords": ["cakephp","sitemap"],
     "type": "cakephp-plugin",
+    "description": "Sitemap plugin for CakePHP",
+    "keywords": ["cakephp", "sitemap"],
     "homepage": "https://github.com/Adnan0703/sitemap",
-    "license": "MIT",
+    "license": ["MIT"],
     "authors": [
         {
             "name": "Adnan Aslam",
