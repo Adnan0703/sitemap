@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.4",
-        "cakephp/cakephp": "3.0.x-dev",
+        "cakephp/cakephp": "~3.0",
         "league/flysystem": "0.4.*",
         "tackk/cartographer": "1.0.*"
     },
