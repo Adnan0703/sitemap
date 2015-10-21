@@ -65,5 +65,5 @@ class SitemapTest extends TestCase {
 			],
 		]);
 	}
-
 }
+
