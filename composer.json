@@ -28,6 +28,7 @@
     "autoload-dev": {
         "psr-4": {
             "Adnan0703\\Sitemap\\Test\\": "tests",
+            "TestApp\\": "tests/TestApp",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
