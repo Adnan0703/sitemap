@@ -1,6 +1,10 @@
 Sitemap plugin for CakePHP
 ==========================
 
+[![Build Status](https://travis-ci.org/Adnan0703/sitemap.svg)](https://travis-ci.org/Adnan0703/sitemap)
+[![Coverage Status](https://coveralls.io/repos/Adnan0703/sitemap/badge.svg?branch=master&service=github)](https://coveralls.io/github/Adnan0703/sitemap?branch=master)
+
+
 The **Sitemap** plugin is a CakePHP wrapper around [Cartographer](http://github.com/tackk/cartographer/) library. 
 It makes it very easy to generate sitemap. The **Sitemap** plugin can handle Sitemaps of more than 50,000 entries. 
 Also it iterates over table records instead of retrieving all records at once.
