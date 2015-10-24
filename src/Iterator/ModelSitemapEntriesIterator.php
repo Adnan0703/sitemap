@@ -1,9 +1,8 @@
 <?php
 namespace Adnan0703\Sitemap\Iterator;
 
-use Cake\ORM\Query;
 use Adnan0703\Sitemap\Iterator\ModelIterator;
-
+use Cake\ORM\Query;
 
 /**
  * Extends ModelIterator
@@ -14,8 +13,11 @@ use Adnan0703\Sitemap\Iterator\ModelIterator;
 class ModelSitemapEntriesIterator extends ModelIterator
 {
 
-	public function current()
-	{
-		return $this->_resultSet[$this->_counter]->sitemap_entry;
-	}
+    /**
+     *
+     */
+    public function current()
+    {
+        return $this->_resultSet[$this->_counter]->sitemap_entry;
+    }
 }

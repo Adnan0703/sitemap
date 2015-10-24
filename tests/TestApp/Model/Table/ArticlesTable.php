@@ -22,9 +22,9 @@ class ArticlesTable extends Table
 {
 
 
-	public function sitemapQuery()
-	{
-		return $this->find()
-			->select(['id', 'title']);
-	}
+    public function sitemapQuery()
+    {
+        return $this->find()
+            ->select(['id', 'title']);
+    }
 }
