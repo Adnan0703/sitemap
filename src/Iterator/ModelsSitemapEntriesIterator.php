@@ -18,9 +18,9 @@ class ModelsSitemapEntriesIterator implements \Iterator
 {
 
     /**
-     * AppendIterator object.
+     * \AppendIterator object.
      *
-     * @var AppendIterator
+     * @var \AppendIterator
      */
     protected $_appendIterator = null;
 
@@ -34,7 +34,6 @@ class ModelsSitemapEntriesIterator implements \Iterator
 
 
     /**
-     *
      * @param array $models Array of models names
      */
     public function __construct(array $models)
@@ -50,7 +49,8 @@ class ModelsSitemapEntriesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function rewind()
     {
@@ -58,7 +58,8 @@ class ModelsSitemapEntriesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function next()
     {
@@ -66,7 +67,8 @@ class ModelsSitemapEntriesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return bool
      */
     public function valid()
     {
@@ -74,15 +76,26 @@ class ModelsSitemapEntriesIterator implements \Iterator
     }
 
     /**
-     *
+     * Returns the current element.
+     * @see http://php.net/manual/en/class.iterator.php
+     * @return mixed
      */
     public function current()
     {
         return $this->_appendIterator->current();
     }
+    
+    /**
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return null
+     */
+    public function key()
+    {
+        return null;
+    }
 
     /**
-     *
+     * @return void
      */
     protected function _setAppendIterator()
     {
@@ -102,13 +115,5 @@ class ModelsSitemapEntriesIterator implements \Iterator
     {
         $model = TableRegistry::get($model);
         return new ModelSitemapEntriesIterator($model->sitemapQuery(), $this->_findLimit);
-    }
-
-    /**
-     *
-     */
-    public function key()
-    {
-        return null;
     }
 }

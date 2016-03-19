@@ -14,7 +14,9 @@ class ModelSitemapEntriesIterator extends ModelIterator
 {
 
     /**
-     *
+     * Returns the current element.
+     * @see http://php.net/manual/en/class.iterator.php
+     * @return array
      */
     public function current()
     {

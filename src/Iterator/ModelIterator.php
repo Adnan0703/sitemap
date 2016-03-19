@@ -35,7 +35,7 @@ class ModelIterator implements \Iterator
     /**
      * Query object.
      *
-     * @var Query
+     * @var \Cake\ORM\Query
      */
     protected $_query = null;
     
@@ -49,7 +49,8 @@ class ModelIterator implements \Iterator
 
 
     /**
-     *
+     * @param \Cake\ORM\Query $query
+     * @param int $limit Number of records that should be retrieved from database on each iteration.
      */
     public function __construct(Query $query, $limit = 500)
     {
@@ -58,7 +59,8 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function rewind()
     {
@@ -68,7 +70,8 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function next()
     {
@@ -86,7 +89,8 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return bool
      */
     public function valid()
     {
@@ -94,7 +98,9 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     *
+     * Returns the current element.
+     * @see http://php.net/manual/en/class.iterator.php
+     * @return array
      */
     public function current()
     {
@@ -102,7 +108,8 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return null
      */
     public function key()
     {

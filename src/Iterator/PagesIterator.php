@@ -32,7 +32,14 @@ use Cake\Core\Configure;
 class PagesIterator implements \Iterator
 {
 
+    /**
+     * @var int
+     */
     protected $_counter = 0;
+    
+    /**
+     * @var array
+     */
     protected $_pages = [];
 
 
@@ -46,7 +53,8 @@ class PagesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function rewind()
     {
@@ -54,7 +62,8 @@ class PagesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return void
      */
     public function next()
     {
@@ -62,7 +71,8 @@ class PagesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return bool
      */
     public function valid()
     {
@@ -70,7 +80,9 @@ class PagesIterator implements \Iterator
     }
 
     /**
-     *
+     * Returns the current element.
+     * @see http://php.net/manual/en/class.iterator.php
+     * @return array
      */
     public function current()
     {
@@ -78,7 +90,8 @@ class PagesIterator implements \Iterator
     }
 
     /**
-     *
+     * @see http://php.net/manual/en/class.iterator.php#96691
+     * @return int
      */
     public function key()
     {

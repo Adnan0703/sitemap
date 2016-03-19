@@ -1,0 +1,5 @@
+# User specific & automatically generated files #
+#################################################
+/vendor
+composer.lock
+sitemap.xml
