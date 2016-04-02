@@ -1,9 +1,6 @@
 <?php
 namespace Adnan0703\Sitemap\Iterator;
 
-use Adnan0703\Sitemap\Iterator\ModelIterator;
-use Cake\ORM\Query;
-
 /**
  * Extends ModelIterator
  *

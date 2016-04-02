@@ -37,15 +37,15 @@ class SitemapTest extends TestCase
         $this->_setPagesLinks();
         $sitemap = new \Adnan0703\Sitemap\Lib\Sitemap();
         $mainSitemap = $sitemap->createSitemap(
-            $dirPath, 
-            'http://cakephp.org/sitemaps/', 
-            $models, 
+            $dirPath,
+            'http://example.com/sitemaps/',
+            $models,
             true
         );
         $this->assertTrue(file_exists($filePath));
         $this->assertTrue(filesize($filePath) > 0);
-        // $mainSitemap will be 'http://cakephp.org/sitemaps/sitemap.xml'
-        $this->assertTrue($mainSitemap == 'http://cakephp.org/sitemaps/sitemap.xml');
+        // $mainSitemap will be 'http://example.com/sitemaps/sitemap.xml'
+        $this->assertTrue($mainSitemap == 'http://example.com/sitemaps/sitemap.xml');
     }
 
     /**
@@ -55,12 +55,12 @@ class SitemapTest extends TestCase
     {
         Configure::write('Sitemap.pages', [
             [
-                'url' => 'http://cakephp.org/pages/home',
+                'url' => 'http://example.com/pages/home',
                 'priority' => '0.9', 
                 'changefreq' => 'daily'
             ],
             [
-                'url' => 'http://cakephp.org/pages/about_us',
+                'url' => 'http://example.com/pages/about_us',
                 'priority' => '0.9', 
                 'changefreq' => 'daily'
             ],

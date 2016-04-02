@@ -82,7 +82,6 @@ class ModelIterator implements \Iterator
                 ->limit($this->_limit)
                 ->all()
                 ->toArray();
-            $this->_resultSet = $this->_resultSet;
             $this->_queryOffset += $this->_limit;
             $this->_counter = 0;
         }

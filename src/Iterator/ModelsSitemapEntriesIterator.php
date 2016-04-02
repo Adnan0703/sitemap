@@ -1,8 +1,6 @@
 <?php
 namespace Adnan0703\Sitemap\Iterator;
 
-use Adnan0703\Sitemap\Iterator\ModelSitemapEntriesIterator;
-use Adnan0703\Sitemap\Iterator\PagesIterator;
 use AppendIterator;
 use Cake\Core\Configure;
 use Cake\ORM\Query;
