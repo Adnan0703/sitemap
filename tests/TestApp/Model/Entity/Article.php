@@ -12,7 +12,7 @@ class Article extends Entity
 
     protected function _getSitemapEntry() 
     {
-        $url = 'http://cakephp.org/articles/view/' . rand(1, 999999);
+        $url = 'http://example.com/articles/view/' . rand(1, 999999);
         return [
             'url' => $url, // required
             'changefreq' => 'weekly', // optional

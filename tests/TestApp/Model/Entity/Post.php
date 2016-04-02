@@ -13,7 +13,7 @@ class Post extends Entity
 
     protected function _getSitemapEntry() 
     {
-        $url = 'http://cakephp.org/posts/view/' . rand(1, 999999);
+        $url = 'http://example.com/posts/view/' . rand(1, 999999);
         return [
             'url' => $url, // required
             'changefreq' => 'weekly', // optional

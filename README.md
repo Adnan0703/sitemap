@@ -62,11 +62,11 @@ $dirPath = WWW_ROOT . DS . 'sitemaps';
 $sitemap = new \Adnan0703\Sitemap\Lib\Sitemap();
 $mainSitemap = $sitemap->createSitemap(
 	$dirPath, 
-	'http://cakephp.org/sitemaps/', 
+	'http://example.com/sitemaps/', 
 	$models, 
 	true
 );
-// $mainSitemap will be 'http://cakephp.org/sitemaps/sitemap.xml'
+// $mainSitemap will be 'http://example.com/sitemaps/sitemap.xml'
 ```
 You can also add Pages controller urls and other urls in sitemap.
 ``` php
