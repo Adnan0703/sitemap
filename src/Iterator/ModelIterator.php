@@ -97,14 +97,30 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     * Returns the current element.
-     * @see http://php.net/manual/en/class.iterator.php
-     * @return array
+	 * Returns the current sitemap entry or entity.
+	 *
+	 * @param bool $sitemap_entry true means return sitemap entry array.
+	 * false means return entity.
+     * @return array | \Cake\Datasource\EntityInterface
+	 *
+	 * @see http://php.net/manual/en/class.iterator.php
      */
-    public function current()
+    public function current($sitemap_entry = true)
     {
+		if ($sitemap_entry === true) {
+			return $this->_sitemap_entry();
+		}
+		
         return $this->_resultSet[$this->_counter];
     }
+	
+	/**
+	 * Returns the current sitemap entry.
+	 */
+	protected function _sitemap_entry()
+	{
+		return $this->current()->sitemap_entry;
+	}
 
     /**
      * @see http://php.net/manual/en/class.iterator.php#96691
