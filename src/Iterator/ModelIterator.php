@@ -119,7 +119,7 @@ class ModelIterator implements \Iterator
 	 */
 	protected function _sitemap_entry()
 	{
-		return $this->current()->sitemap_entry;
+		return $this->_resultSet[$this->_counter]->sitemap_entry;
 	}
 
     /**
