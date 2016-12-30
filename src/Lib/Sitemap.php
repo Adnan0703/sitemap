@@ -1,7 +1,7 @@
 <?php
 namespace Adnan0703\Sitemap\Lib;
 
-use Adnan0703\Sitemap\Iterator\ModelsSitemapEntriesIterator;
+use Adnan0703\Sitemap\Iterator\ModelsAppendIterator;
 use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use League\Flysystem\Adapter\Local as LocalAdapter;
@@ -50,7 +50,7 @@ class Sitemap
         $this->SitemapFactory->setBaseUrl($baseUrl);
 
         // Create an Iterator of your URLs.
-        $urlsIterator = new ModelsSitemapEntriesIterator($models);
+        $urlsIterator = new ModelsAppendIterator($models);
 
         // Returns the URL to the main Sitemap/Index file
         $mainSitemap = $this->SitemapFactory->createSitemap($urlsIterator);
