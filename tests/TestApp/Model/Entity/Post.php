@@ -1,5 +1,4 @@
 <?php
-
 namespace TestApp\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -11,9 +10,10 @@ use Cake\ORM\Entity;
 class Post extends Entity
 {
 
-    protected function _getSitemapEntry() 
+    protected function _getSitemapEntry()
     {
         $url = 'http://example.com/posts/view/' . rand(1, 999999);
+
         return [
             'url' => $url, // required
             'changefreq' => 'weekly', // optional
