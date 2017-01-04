@@ -15,13 +15,13 @@ use Cake\Core\Configure;
  * ```
  *   Configure::write('Sitemap.pages', [
  *       [
- *           'url' => 'http://example.com/', 
- *           'priority' => '0.9', 
+ *           'url' => 'http://example.com/',
+ *           'priority' => '0.9',
  *           'changefreq' => 'daily'
  *       ],
  *       [
- *           'url' => Router::url(['controller' => 'Books', 'action' => 'news'], true), 
- *           'priority' => '0.9', 
+ *           'url' => Router::url(['controller' => 'Books', 'action' => 'news'], true),
+ *           'priority' => '0.9',
  *           'changefreq' => 'daily'
  *       ],
  *   ]);
@@ -36,20 +36,20 @@ class PagesIterator implements \Iterator
      * @var int
      */
     protected $_counter = 0;
-    
+
     /**
      * @var array
      */
     protected $_pages = [];
 
 
-    
+
     /**
      *
      */
     public function __construct()
     {
-        $this->_pages = (array)Configure::read('Sitemap.pages'); 
+        $this->_pages = (array)Configure::read('Sitemap.pages');
     }
 
     /**

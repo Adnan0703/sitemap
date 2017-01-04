@@ -11,34 +11,32 @@ use Cake\ORM\Query;
  */
 class ModelIterator implements \Iterator
 {
-
     /**
      * @var int
      */
     protected $_counter = 0;
-    
+
     /**
      * Number of records that should be retrieved from database on each iteration.
      *
      * @var int
      */
     protected $_limit = 500;
-    
+
     /**
-     * Number of records that should be skipped from the original result set.
-     * Option for query object.
+     * The page of results.
      *
      * @var int
      */
-    protected $_queryOffset = 0;
-    
+    protected $_page = 1;
+
     /**
      * Query object.
      *
      * @var \Cake\ORM\Query
      */
     protected $_query = null;
-    
+
     /**
      * Retrieved records.
      *
@@ -49,7 +47,7 @@ class ModelIterator implements \Iterator
 
 
     /**
-     * @param \Cake\ORM\Query $query
+     * @param \Cake\ORM\Query $query Query object
      * @param int $limit Number of records that should be retrieved from database on each iteration.
      */
     public function __construct(Query $query, $limit = 500)
@@ -65,7 +63,7 @@ class ModelIterator implements \Iterator
     public function rewind()
     {
         $this->_counter = 0;
-        $this->_queryOffset = 0;
+        $this->_page = 1;
         $this->next();
     }
 
@@ -78,11 +76,11 @@ class ModelIterator implements \Iterator
         $this->_counter++;
         if (!isset($this->_resultSet[$this->_counter])) {
             $this->_resultSet = $this->_query
-                ->offset($this->_queryOffset)
                 ->limit($this->_limit)
+                ->page($this->_page)
                 ->all()
                 ->toArray();
-            $this->_queryOffset += $this->_limit;
+            $this->_page++;
             $this->_counter = 0;
         }
     }
@@ -97,13 +95,30 @@ class ModelIterator implements \Iterator
     }
 
     /**
-     * Returns the current element.
+     * Returns the current sitemap entry or entity.
+     *
+     * @param bool $sitemapEntry true means return sitemap entry array.
+     * false means return entity.
+     * @return array | \Cake\Datasource\EntityInterface
+     *
      * @see http://php.net/manual/en/class.iterator.php
+     */
+    public function current($sitemapEntry = true)
+    {
+        if ($sitemapEntry === true) {
+            return $this->_sitemapEntry();
+        }
+
+        return $this->_resultSet[$this->_counter];
+    }
+
+    /**
+     * Returns the current sitemap entry.
      * @return array
      */
-    public function current()
+    protected function _sitemapEntry()
     {
-        return $this->_resultSet[$this->_counter];
+        return $this->_resultSet[$this->_counter]->sitemap_entry;
     }
 
     /**
