@@ -22,14 +22,13 @@ class ModelIterator implements \Iterator
      * @var int
      */
     protected $_limit = 500;
-
+    
     /**
-     * Number of records that should be skipped from the original result set.
-     * Option for query object.
+     * The page of results.
      *
      * @var int
      */
-    protected $_queryOffset = 0;
+    protected $_page = 1;
 
     /**
      * Query object.
@@ -64,7 +63,7 @@ class ModelIterator implements \Iterator
     public function rewind()
     {
         $this->_counter = 0;
-        $this->_queryOffset = 0;
+        $this->_page = 1;
         $this->next();
     }
 
@@ -77,11 +76,11 @@ class ModelIterator implements \Iterator
         $this->_counter++;
         if (!isset($this->_resultSet[$this->_counter])) {
             $this->_resultSet = $this->_query
-                ->offset($this->_queryOffset)
                 ->limit($this->_limit)
+                ->page($this->_page)
                 ->all()
                 ->toArray();
-            $this->_queryOffset += $this->_limit;
+            $this->_page++;
             $this->_counter = 0;
         }
     }
