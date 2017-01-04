@@ -22,7 +22,7 @@ class ModelIterator implements \Iterator
      * @var int
      */
     protected $_limit = 500;
-    
+
     /**
      * The page of results.
      *
